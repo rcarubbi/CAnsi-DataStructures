@@ -2,10 +2,10 @@
 #include <malloc.h>
 
 int main() {
-    int* y = (int*) malloc(sizeof(int));
-    *y = 20;
-    int z = sizeof(int);
-    printf("*y=%i, z=%i\n", *y, z);
+    int* pointer = (int*) malloc(sizeof(int));
+    *pointer = 20;
+    int intSize = sizeof(int);
+    printf("*pointer=%i, intSize=%i\n", *pointer, intSize);
     getchar();
     return 0;
 }
