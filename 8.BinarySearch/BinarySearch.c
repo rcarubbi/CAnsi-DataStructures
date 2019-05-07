@@ -131,6 +131,6 @@ int main() {
     ShowList(&list);
     printf("Número de elementos na lista: %i.\n", GetSize(&list));
  
-    system("PAUSE >> NULL");
+    system("PAUSE > NUL");
     return 0;
 }

@@ -6,6 +6,6 @@ int main(){
     int* pointer = &number;
     *pointer = 30;
     printf("Valor atual de x: %i\n", number);
-    system("Pause >> NULL");
+    system("PAUSE > NUL");
     return 0;
 }

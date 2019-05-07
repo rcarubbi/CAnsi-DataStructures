@@ -202,6 +202,6 @@ int main() {
     ShowList(&list);
     printf("A lista possui %i elementos\n", Count(&list));
 
-    system("PAUSE >> NULL");
+    system("PAUSE > NUL");
     return 0;
 }

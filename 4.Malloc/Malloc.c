@@ -7,6 +7,6 @@ int main() {
     *pointer = 20;
     int intSize = sizeof(int);
     printf("*pointer=%i, intSize=%i\n", *pointer, intSize);
-    system("Pause >> NULL"); 
+    system("PAUSE > NUL"); 
     return 0;
 }

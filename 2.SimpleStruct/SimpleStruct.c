@@ -21,6 +21,6 @@ int main(){
     } else {
         printf("Altura abaixo da máxima\n");
     }
-    system("Pause >> NULL");
+    system("PAUSE > NUL");
     return 0;
 }
