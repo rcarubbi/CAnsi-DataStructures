@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
 
 #define true 1
 #define false 0
@@ -86,12 +88,13 @@ void ReinitList(List* listPointer) {
 }
 
 int main() {
+    setlocale(LC_ALL, "");
     List list;
     
     InitializeList(&list);
     ShowList(&list);
     
-    printf("Numero de elementos na lista: %i.\n", GetSize(&list));
+    printf("Número de elementos na lista: %i.\n", GetSize(&list));
     
     Item item;
     
@@ -113,20 +116,20 @@ int main() {
     InsertItemAt(&list, item, 2);
     
     ShowList(&list);
-    printf("Numero de elementos na lista: %i.\n", GetSize(&list));
+    printf("Número de elementos na lista: %i.\n", GetSize(&list));
  
-    printf("Chave 4 encontrada na posicao: %i do arranjo Items.\n", SequentialSearch(&list, 4));
+    printf("Chave 4 encontrada na posição: %i do arranjo Items.\n", SequentialSearch(&list, 4));
   
-    if (DeleteItem(&list, 4)) printf("Exclusao bem sucedida: 4.\n");
-    if (DeleteItem(&list, 8)) printf("Exclusao bem sucedida: 8.\n");
-    if (DeleteItem(&list, 9)) printf("Exclusao bem sucedida: 9.\n");
+    if (DeleteItem(&list, 4)) printf("Exclusão bem sucedida: 4.\n");
+    if (DeleteItem(&list, 8)) printf("Exclusão bem sucedida: 8.\n");
+    if (DeleteItem(&list, 9)) printf("Exclusão bem sucedida: 9.\n");
     ShowList(&list);
-    printf("Numero de elementos na lista: %i.\n", GetSize(&list));
+    printf("Número de elementos na lista: %i.\n", GetSize(&list));
  
     ReinitList(&list);
     ShowList(&list);
-    printf("Numero de elementos na lista: %i.\n",GetSize(&list));
+    printf("Número de elementos na lista: %i.\n",GetSize(&list));
     
-    getchar();
+    system("Pause >> NULL");
     return 0;
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <malloc.h>
 
 int main() {
@@ -6,6 +7,6 @@ int main() {
     *pointer = 20;
     int intSize = sizeof(int);
     printf("*pointer=%i, intSize=%i\n", *pointer, intSize);
-    getchar();
+    system("Pause >> NULL"); 
     return 0;
 }

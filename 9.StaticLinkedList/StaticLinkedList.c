@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
 
 #define MAX_NODES 50
 #define EMPTY_NODE -1
@@ -146,6 +148,8 @@ void ReinitList(LinkedList* listPointer) {
 }
 
 int main() {
+    setlocale(LC_ALL, "");
+    
     LinkedList list;
     Item item;
     
@@ -186,18 +190,18 @@ int main() {
     int index = SequentialOrderedSearch(&list, 12);
     printf("12 esta no indice %i\n", index);
 
-    if (DeleteItem(&list, 5)) printf("Item 5 excluido com sucesso\n");
+    if (DeleteItem(&list, 5)) printf("Item 5 excluído com sucesso\n");
     printf("A lista possui %i elementos\n", Count(&list));
    
-    if (DeleteItem(&list, 12)) printf("Item 12 excluido com sucesso\n");
+    if (DeleteItem(&list, 12)) printf("Item 12 excluído com sucesso\n");
     printf("A lista possui %i elementos\n", Count(&list));
 
-    if (DeleteItem(&list, 6)) printf("Item 6 excluido com sucesso\n");
+    if (DeleteItem(&list, 6)) printf("Item 6 excluído com sucesso\n");
     printf("A lista possui %i elementos\n", Count(&list));
 
     ShowList(&list);
     printf("A lista possui %i elementos\n", Count(&list));
 
-    getchar();
+    system("PAUSE >> NULL");
     return 0;
 }

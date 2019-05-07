@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
 
 #define true 1
 #define false 0
@@ -48,7 +50,7 @@ int SentinelSearch(List* listPointer, Key id) {
     }
 }
 
-bool insertItemAt(List* listPointer, Item item, int position) {
+bool InsertItemAt(List* listPointer, Item item, int position) {
     int index;
     if (listPointer->Count == MAX_ITEMS || position < 0 || position > listPointer->Count) {
         return false;
@@ -83,43 +85,44 @@ void ReinitList(List* listPointer) {
 }
 
 int main() {
+    setlocale(LC_ALL, "");
     List list; InitializeList(&list);
     Item item;
 
     ShowList(&list);
-    printf("Numero de elementos na lista: %i.\n", GetSize(&list));
+    printf("Número de elementos na lista: %i.\n", GetSize(&list));
     
     item.Id = 9;
-    insertItemAt(&list, item, 0);
+    InsertItemAt(&list, item, 0);
 
     ShowList(&list);
     
     item.Id = 3;
-    insertItemAt(&list, item, 1);
+    InsertItemAt(&list, item, 1);
     item.Id = 4;
-    insertItemAt(&list, item, 2);
+    InsertItemAt(&list, item, 2);
     item.Id = 1;
-    insertItemAt(&list, item, 3);
+    InsertItemAt(&list, item, 3);
     item.Id = 12;
-    insertItemAt(&list, item, 2);
+    InsertItemAt(&list, item, 2);
 
     ShowList(&list);
-    printf("Numero de elementos na lista: %i.\n", GetSize(&list));
+    printf("Número de elementos na lista: %i.\n", GetSize(&list));
  
-    printf("Chave 4 encontrada na posicao: %i do arranjo Items.\n", SentinelSearch(&list, 4));
+    printf("Chave 4 encontrada na posição: %i do arranjo Items.\n", SentinelSearch(&list, 4));
   
-    if (DeleteItem(&list,4)) printf("Exclusao bem sucedida: 4.\n");
-    if (DeleteItem(&list,8)) printf("Exclusao bem sucedida: 8.\n");
-    if (DeleteItem(&list,9)) printf("Exclusao bem sucedida: 9.\n");
+    if (DeleteItem(&list,4)) printf("Exclusão bem sucedida: 4.\n");
+    if (DeleteItem(&list,8)) printf("Exclusão bem sucedida: 8.\n");
+    if (DeleteItem(&list,9)) printf("Exclusão bem sucedida: 9.\n");
     
     ShowList(&list);
-    printf("Numero de elementos na lista: %i.\n", GetSize(&list));
+    printf("Número de elementos na lista: %i.\n", GetSize(&list));
  
     ReinitList(&list);
 
     ShowList(&list);
-    printf("Numero de elementos na lista: %i.\n", GetSize(&list));
+    printf("Número de elementos na lista: %i.\n", GetSize(&list));
  
-    getchar();
+    system("PAUSE >> NULL");
     return 0;
 }

@@ -7,7 +7,9 @@
 	"settings": {
 		"files.associations": {
 			"stdio.h": "c",
-			"stdlib.h": "c"
-		}
+			"stdlib.h": "c",
+			"locale.h": "c"
+		},
+		"files.encoding": "windows1252"
 	}
 }
