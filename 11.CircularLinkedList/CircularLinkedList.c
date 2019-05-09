@@ -106,7 +106,7 @@ bool InsertOrderedItem(LinkedList* listPointer, Item item) {
         return false;
     } 
 
-    nodeToInsert = (NodePointer) malloc(sizeof(Item));
+    nodeToInsert = (NodePointer) malloc(sizeof(ListNode));
     nodeToInsert->Item = item;
     nodeToInsert->Next = previousNode->Next;
     previousNode->Next = nodeToInsert;
@@ -141,50 +141,50 @@ int main(void) {
     LinkedList list;
     Item item;
     
-    InitList(&list);
+    InitializeList(&list);
     ShowList(&list);
     printf("A lista possui %i elementos\n", Count(&list));
     
     item.Id = 1;
-    InsertNode(&list, item);
+    InsertOrderedItem(&list, item);
     ShowList(&list);
     printf("A lista possui %i elementos\n", Count(&list));
     
     item.Id = 5;
-    InsertNode(&list, item);
+    InsertOrderedItem(&list, item);
     ShowList(&list);
      printf("A lista possui %i elementos\n", Count(&list));
     
     item.Id = 12;
-    InsertNode(&list, item);
+    InsertOrderedItem(&list, item);
     ShowList(&list);
     printf("A lista possui %i elementos\n", Count(&list));
     
     item.Id = 9;
-    InsertNode(&list, item);
+    InsertOrderedItem(&list, item);
     ShowList(&list);
     printf("A lista possui %i elementos\n", Count(&list));
     
     item.Id = 22;
-    InsertNode(&list, item);
+    InsertOrderedItem(&list, item);
     ShowList(&list);
     printf("A lista possui %i elementos\n", Count(&list));
     
     item.Id = 14;
-    InsertNode(&list, item);
+    InsertOrderedItem(&list, item);
     ShowList(&list);
     printf("A lista possui %i elementos\n", Count(&list));
     
-    NodePointer node = SequentialOrderedSearch(&list, 12);
-    printf("12 esta no endereÃ§o %p\n", node);
+    NodePointer node = SentinelOrderedSearch(&list, 12);
+    printf("12 esta no endereço %p\n", node);
 
-    if (DeleteItem(&list, 5)) printf("Item 5 excluÃ­do com sucesso\n");
+    if (DeleteItem(&list, 5)) printf("Item 5 excluí­do com sucesso\n");
     printf("A lista possui %i elementos\n", Count(&list));
    
-    if (DeleteItem(&list, 12)) printf("Item 12 excluÃ­do com sucesso\n");
+    if (DeleteItem(&list, 12)) printf("Item 12 excluí­do com sucesso\n");
     printf("A lista possui %i elementos\n", Count(&list));
 
-    if (DeleteItem(&list, 6)) printf("Item 6 excluÃ­do com sucesso\n");
+    if (DeleteItem(&list, 6)) printf("Item 6 excluí­do com sucesso\n");
     printf("A lista possui %i elementos\n", Count(&list));
 
     ShowList(&list);
