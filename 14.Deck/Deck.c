@@ -67,18 +67,18 @@ bool InsertAtEnd(Deck* deckPointer, Item item) {
     newItem->Item = item;
     newItem->NextItem = deckPointer->Header;
     newItem->PreviousItem = deckPointer->Header->PreviousItem;
-    deckPointer->Header->PreviousItem->NextItem = newItem;
     deckPointer->Header->PreviousItem = newItem;
+    newItem->PreviousItem->NextItem = newItem;
     return true;
 }
 
 bool InsertAtStart(Deck* deckPointer, Item item) {
     DeckItemPointer newItem = (DeckItemPointer) malloc(sizeof(DeckItem));
     newItem->Item = item;
-    newItem->NextItem = deckPointer->Header->NextItem;
     newItem->PreviousItem = deckPointer->Header;
-    deckPointer->Header->NextItem->PreviousItem = newItem;
-    deckPointer->Header->NextItem = newItem;
+    newItem->NextItem = deckPointer->Header->NextItem;
+    deckPointer->Header->NextItem = newItem;   
+    newItem->NextItem->PreviousItem = newItem;
     return true;
 }
 
