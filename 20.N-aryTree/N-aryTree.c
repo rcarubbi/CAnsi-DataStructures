@@ -87,6 +87,14 @@ int main(void) {
     setlocale(LC_ALL, "");
     
     NodePointer root = InitTree(8);
+    InsertNode(root, 12, 8);
+    InsertNode(root, 10, 8);
+    InsertNode(root, 13, 10);
+    InsertNode(root, 16, 13);
+    InsertNode(root, 33, 10);
+    ShowTree(root);
+
+    
 
     system("PAUSE > NUL");
     return 0;
